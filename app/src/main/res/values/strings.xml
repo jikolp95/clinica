@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Clinica</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="phone_number">Введите номер телефона</string>
+    <string name="enter">Вход</string>
+    <string name="enter1">Войти</string>
+    <string name="registration">Регистрация</string>
+    <string name="welcome">Добро пожаловать!</string>
+    <string name="hospital_name">Название клиники</string>
+    <string name="hospital_address">Адрес клиники</string>
+    <string name="map">Карта</string>
+    <string name="list">Список</string>
+    <string name="api_key">AIzaSyBJgYe6RRs4B53nS65vwpRF1jeD_VvzAWA</string>
+    <string name="hospital_description">Клиника «Палесюса» – это первая и единственная лицензированная клиника терапии методом физической нагрузки не только в Литве, но и в странах Балтии. В нашей клинике пациентов лечат по индивидуально составленным программам, основанным на применении дозированной физической нагрузки.
+
+Основной аспект деятельности клиники – сочетание достижений медицинской науки и науки о физической нагрузке в  процессе подбора индивидуальных решений для лечения пациента методом физической нагрузки, с применением практики доказательной медицинской.
+</string>
+    <string name="enter_credentials">Введите свои данные</string>
+    <string name="next">Далее</string>
+</resources>

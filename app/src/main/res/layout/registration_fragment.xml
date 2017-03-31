@@ -1,0 +1,88 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp">
+
+        <EditText
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/et_border"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_person_black_48px"
+            android:hint="@string/login"
+            android:maxLength="16"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/et_border"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_lock_outline_black_48px"
+            android:hint="@string/password"
+            android:maxLength="16"
+            android:inputType="textPassword"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+
+        <EditText
+            android:id="@+id/repeat_password"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/et_border"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_lock_open_outline"
+            android:hint="@string/repeat_password"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/et_border"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_phone"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_background"
+            android:text="@string/next"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

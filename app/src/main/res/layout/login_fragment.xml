@@ -1,0 +1,56 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/et_border"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_person_black_48px"
+            android:hint="@string/login"
+            android:maxLength="16"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/et_border"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_lock_outline_black_48px"
+            android:hint="@string/password"
+            android:maxLength="16"
+            android:inputType="textPassword"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp" />
+
+        <Button
+            android:id="@+id/enter_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_background"
+            android:text="@string/enter1"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>
