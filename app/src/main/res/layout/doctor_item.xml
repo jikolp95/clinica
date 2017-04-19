@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"  >
 
     <CheckBox
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:checked="true" />
+        android:checked="true"
+        android:buttonTint="@color/turquoise"/>
 
     <TextView
         android:id="@+id/doctor_name"

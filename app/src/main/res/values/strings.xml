@@ -22,4 +22,5 @@
 </string>
     <string name="enter_credentials">Введите свои данные</string>
     <string name="next">Далее</string>
+    <string name="base_url">http://10.0.3.2:8080/messenger/webapi/</string>
 </resources>

@@ -22,7 +22,7 @@ class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
 
         if (position == 0) {
-            return HospitalListFragment.newInstance();
+            return ClinicListFragment.newInstance();
         } else {
             return MapFragment.newInstance();
         }
