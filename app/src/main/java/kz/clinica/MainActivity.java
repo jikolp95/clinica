@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView city;
-    private List<City> cities = new ArrayList<>();
+    private List<City> cityList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +64,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.city:
+                showDialog();
+                break;
+        }
+    }
 
-    private List<City> getCities() {
+
+    private void showDialog() {
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_selectable_list_item);
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
+        builderSingle.setTitle("Выберите город");
         final Gson gson = new GsonBuilder().create();
         final Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -76,8 +89,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onResponse(Call<List<City>> call, Response<List<City>> response) {
-                final List<City> cityList = response.body();
-                cities = cityList;
+                final List<City> cities= response.body();
+                for (City city : cities) {
+                    arrayAdapter.add(city.getName());
+                    cityList.add(city);
+                }
             }
 
             @Override
@@ -86,29 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-
-        return cities;
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.city:
-                showDialog(getCities());
-                break;
-        }
-    }
-
-
-    private void showDialog(final List<City> cities) {
-        AlertDialog.Builder builderSingle = new AlertDialog.Builder(this);
-        builderSingle.setTitle("Выберите город");
-
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_selectable_list_item);
-        for (City city :
-                cities) {
-            arrayAdapter.add(city.getName());
-        }
 
         builderSingle.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
             @Override
@@ -120,9 +113,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                int city_id = cities.get(i).getCity_id();
-//                ClinicListFragment frag = new ClinicListFragment();
-//                getFragmentManager().getFragment("")getClinics(city_id);
+                int city_id = cityList.get(i).getCity_id();
+                city.setText(cityList.get(i).getName());
+                FragmentManager manager = getSupportFragmentManager();
+                ClinicListFragment fragment = (ClinicListFragment) manager.getFragments().get(0);
+                fragment.getClinics(city_id);
             }
         });
         builderSingle.show();

@@ -51,7 +51,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.enter_btn:
-                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
+//                getActivity().startActivity(new Intent(getActivity(), MainActivity.class));
         }
 
     }
@@ -59,10 +59,10 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        if(((EnterActivity)getActivity()).getSupportActionBar()!=null) {
-            ((EnterActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.welcome));
-            ((EnterActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            ((EnterActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(getActivity().getDrawable(R.drawable.ic_heart));
+        if (((EnterActivity) getActivity()).getSupportActionBar() != null) {
+            ((EnterActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.welcome));
+            ((EnterActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            ((EnterActivity) getActivity()).getSupportActionBar().setHomeAsUpIndicator(getActivity().getDrawable(R.drawable.ic_heart));
         }
     }
 }
