@@ -79,7 +79,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         if (((EnterActivity) getActivity()).getSupportActionBar() != null) {
             ((EnterActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.welcome));
             ((EnterActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            ((EnterActivity) getActivity()).getSupportActionBar().setHomeAsUpIndicator(getActivity().getDrawable(R.drawable.ic_heart));
+            ((EnterActivity) getActivity()).getSupportActionBar().setHomeAsUpIndicator(getActivity().getResources().getDrawable(R.drawable.ic_heart));
         }
     }
 

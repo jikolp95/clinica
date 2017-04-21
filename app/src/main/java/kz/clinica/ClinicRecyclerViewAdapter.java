@@ -18,6 +18,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,13 +27,13 @@ import java.util.Map;
 
 import kz.clinica.model.Clinic;
 import kz.clinica.model.Doctor;
-import kz.clinica.utilities.DescriptionOfClinicActivity;
 
 
 class ClinicRecyclerViewAdapter extends RecyclerView.Adapter<ClinicRecyclerViewAdapter.ViewHolder> {
     private List<Clinic> listOfClinic;
     private Activity context;
     private static final int REQUEST_CALL = 1;
+    private static final String CLINIC = "Clinic";
 
 
     ClinicRecyclerViewAdapter(List<Clinic> listOfClinic, Activity context) {
@@ -117,7 +119,11 @@ class ClinicRecyclerViewAdapter extends RecyclerView.Adapter<ClinicRecyclerViewA
         holder.top_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                context.startActivity(new Intent(context, DescriptionOfClinicActivity.class));
+                final Gson gson = new Gson();
+                String clinic = gson.toJson(listOfClinic.get(position));
+                Intent intent = new Intent(context, DescriptionOfClinicActivity.class);
+                intent.putExtra(CLINIC, clinic);
+                context.startActivity(intent);
             }
         });
 

@@ -1,9 +1,10 @@
 package kz.clinica.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class Clinic {
+public class Clinic implements Serializable {
     //айди клиники
     private int clinic_id;
     //название клиники

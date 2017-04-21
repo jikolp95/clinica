@@ -33,7 +33,7 @@
         <activity android:name=".MainActivity">
 
         </activity>
-        <activity android:name=".utilities.DescriptionOfClinicActivity" />
+        <activity android:name=".DescriptionOfClinicActivity" />
     </application>
 
 </manifest>
