@@ -16,9 +16,9 @@ public class Clinic implements Serializable {
     //адрес
     private String address;
     //широта
-    private float lat;
+    private long lat;
     //долгота
-    private float lon;
+    private long lon;
     //список фотографий клиники
     private List<Image> images;
     //список докторов клиники
@@ -114,12 +114,12 @@ public class Clinic implements Serializable {
             return this;
         }
 
-        public Builder lat(float lat) {
+        public Builder lat(long lat) {
             Clinic.this.lat = lat;
             return this;
         }
 
-        public Builder lon(float lon) {
+        public Builder lon(long lon) {
             Clinic.this.lon = lon;
             return this;
         }
